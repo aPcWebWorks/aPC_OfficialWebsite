@@ -1,0 +1,737 @@
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav" >
+                        <!-- ***** Logo Start ***** -->
+                        <a href="" class=" logo logotop">
+                            <img src="../assets/images/PC Landscape PNG 1.png" alt="apc-Web-Works">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul #navElement class="nav">
+                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#services">Services</a></li>
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
+                            <li class="scroll-to-section"><a href="#newsletter">Contact Us</a></li>
+                            <li>
+                                <div class="gradient-button" (click)="toggleModal()">
+                                    <a id="modal_trigger" href="#modal">
+                                      <i class="fa fa-sign-in-alt"></i> Sign In Now
+                                    </a>
+                                  </div>
+                            </li>
+                        </ul>
+                        <a class="menu-trigger" (click)="toggleNavVisibility()">
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <div id="modal" [ngStyle]="modalStyles" class="popupContainer">
+        <div class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close" (click)="toggleModal()"><i class="fa fa-times"></i></span>
+        </div>
+        <section class="popupBody">
+            <!-- Social Login -->
+            <div class="social_login">
+                <div class="">
+                    <!-- <a href="#" class="social_box fb">
+                  <span class="icon"><i class="fab fa-facebook"></i></span>
+                  <span class="icon_title">Connect with Facebook</span>
+
+              </a> -->
+
+                    <!-- <a href="#" class="social_box google">
+                        <span class="icon"><i class="fab fa-google-plus"></i></span>
+                        <span class="icon_title">Connect with Google</span>
+                    </a> -->
+                </div>
+
+                <!-- <div class="centeredText">
+                    <span>Or use your Email address</span>
+                </div> -->
+
+                <div class="action_btns" >
+                    <div class="one_half"><button id="login_form" class="btn">Login</button></div>
+                    <div class="one_half last"><a href="#" id="register_form" class="btn" style="margin-top: 20px;">Sign up</a></div>
+                </div>
+            </div>
+
+            <!-- Username & Password Login form -->
+            <div class="user_login">
+                <form id="loginForm">
+                    <label>Email / Username</label>
+                    <input type="text" id="username" />
+                    <br />
+
+                    <label>Password</label>
+                    <input type="password" id="password" />
+                    <br />
+
+                    <!-- <div class="checkbox">
+                <input id="remember" type="checkbox" />
+                <label for="remember">Remember me on this computer</label>
+            </div> -->
+
+                    <p id="loginMessage" class="text-danger"></p>
+
+                    <div class="action_btns">
+                        <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i>
+                                Back</a>
+                        </div>
+                        <div class="one_half last"><button href="#" class="btn btn_red" onclick="login()">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- Register Form -->
+            <div class="container mt-5">
+                <div class="user_register">
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="email2">Email / Username</label>
+                            <input type="email" class="form-control" id="email2" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactNumber">Contact Number</label>
+                            <input type="text" class="form-control" id="contactNumber" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password2">Password</label>
+                            <input type="password" class="form-control" id="password2" required
+                                oninput="checkPasswordMatch()" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword2">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword2" required
+                                oninput="checkPasswordMatch()" />
+                        </div>
+
+
+
+                        <p id="registrationMessage" class="text-danger"></p>
+
+                        <button type="button" class="btn btn-danger mt-3" onclick="register()" id="registerBtn"
+                            disabled>Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6 align-self-center">
+                            <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s"
+                                data-wow-delay="1s">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h2>"We Create, You Succeed"</h2>
+                                        <p>We specialize in crafting seamless web and mobile solutions tailored to your
+                                            unique needs. With a
+                                            passion for technology and
+                                            a commitment to excellence, we transform ideas into digital realities,
+                                            helping businesses thrive
+                                            in the digital age</p>
+                                    </div>
+                                    <!-- <div class="col-lg-12">
+                    <div class="white-button first-button scroll-to-section">
+                      <a href="#contact">Free Quote <i class="fab fa-apple"></i></a>
+                    </div>
+                    <div class="white-button scroll-to-section">
+                      <a href="#contact">Free Quote <i class="fab fa-google-play"></i></a>
+                    </div>
+                  </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <img src="../assets/images/slider-dec.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services" class="services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <h4>Amazing <em>Services &amp; Features</em> for you</h4>
+                        <img src="../assets/images/heading-line-dec.png" alt="">
+                        <p>Discover Our Amazing Services & Features: Elevate your digital presence with our expert web
+                            and
+                            mobile development, stunning design, and cutting-edge technology solutions..</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="service-item first-service">
+                        <div class="icon"></div>
+                        <h4>Web Development</h4>
+                        <p>Unlock the web's full potential with our amazing services and features, tailored to your
+                            digital
+                            success..</p>
+                        <!-- <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="service-item second-service">
+                        <div class="icon"></div>
+                        <h4>Mobile App</h4>
+                        <p>
+                            Discover the Amazing Mobile App: Your Gateway to Exceptional Services and Features.</p>
+                        <!-- <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="service-item third-service">
+                        <div class="icon"></div>
+                        <h4>Multi Workflow Idea</h4>
+                        <p>Discover our amazing range of services and features designed to simplify your digital world,
+                            all in one
+                            place.</p>
+                        <!-- <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="service-item fourth-service">
+                        <div class="icon"></div>
+                        <h4>24/7 Help &amp; Support</h4>
+                        <p>Experience amazing services and features designed just for you, backed by our round-the-clock
+                            help and
+                            support.</p>
+                        <!-- <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="about-us section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="section-heading">
+                        <h4>About <em>What We Do</em> &amp; Who We Are</h4>
+                        <img src="assets/images/heading-line-dec.png" alt="">
+                        <p>"Creating cutting-edge web and mobile solutions is what we do, and innovation is who we are."
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">Maintance Problems</a></h4>
+                                <p>Addressing maintenance challenges with proactive solutions, we're your dependable
+                                    partner in web and
+                                    mobile development.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">24/7 Support &amp; Help</a></h4>
+                                <p>Delivering 24/7 support and assistance, it's our commitment in everything we do,
+                                    defining who we are
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">Fixing Issues About</a></h4>
+                                <p>Crafting digital experiences. Defining innovation.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="box-item">
+                                <h4><a href="#">Technical Support</a></h4>
+                                <p>What We Do: Deliver top-notch technical support.
+                                    Who We Are: Your dedicated IT partner, solving problems with expertise</p>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-12">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor idunte ut labore et dolore adipiscing  magna.</p>
+              <div class="gradient-button">
+                <a href="#">Start 14-Day Free Trial</a>
+              </div>
+              <span>*No Credit Card Required</span>
+            </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-image">
+                        <img src="assets/images/about-right-dec.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="clients" class="the-clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading">
+                        <h4>Check What <em>The Clients Rates</em> About Our Web Works</h4>
+                        <img src="assets\images\client-image.png" alt="">
+                        <p>At aPc Web Works, we transform ideas into digital reality. Our expert team
+                            crafts engaging websites that captivate, function flawlessly, and drive results. Let's
+                            build your online success story together..</p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="naccs">
+                        <div class="grid">
+                            <div class="row">
+                                <div class="col-lg-7 align-self-center">
+                                    <div class="menu">
+                                        <div class="first-thumb active">
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <h4>Shree Dhareshwar Construction Hub</h4>
+
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                                                        <span class="category">Construction Company</span>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <span class="rating">4.8</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="thumb active">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <h4>GH Construction</h4>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                                                        <span class="category">Construction Company</span>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <span class="rating">4.5</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="thumb active">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <h4>The Design 24 Studio</h4>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                                                        <span class="category">Graphic Designing Company</span>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <span class="rating">4.7</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="thumb  active">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <h4>Ovee ads</h4>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                                                        <span class="category">Digital Marketing Company</span>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-4 col-12">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <span class="rating">4.6</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <ul class="nacc">
+                                        <li class="active">
+                                            <div>
+                                                <div class="thumb">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="client-content">
+                                                                <img src="assets/images/quote.png" alt="">
+                                                                <p>“we bridge the gap between imagination and
+                                                                    technology. Our mission is to empower
+                                                                    businesses through tailored web and mobile solutions
+                                                                    that captivate, engage, and
+                                                                    deliver results..”</p>
+                                                            </div>
+                                                            <div class="down-content">
+                                                                <img src="assets/images/client-image.png" alt="">
+                                                                <div class="right-content">
+                                                                    <h4>Prem Chakankar</h4>
+                                                                    <span>Director of aPC Web Works </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <div class="thumb">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="client-content">
+                                                                <img src="assets/images/quote.png" alt="">
+                                                                <p>“CTO, Lorem ipsum dolor sit amet, consectetur
+                                                                    adpiscing elit, sed do eismod tempor
+                                                                    idunte ut labore et dolore magna aliqua darwin
+                                                                    kengan
+                                                                    lorem ipsum dolor sit amet, consectetur picing elit
+                                                                    massive big blasta.”</p>
+                                                            </div>
+                                                            <div class="down-content">
+                                                                <img src="assets/images/client-image.jpg" alt="">
+                                                                <div class="right-content">
+                                                                    <h4>Jake H. Nyo</h4>
+                                                                    <span>CTO of Digital Company</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <div class="thumb">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="client-content">
+                                                                <img src="assets/images/quote.png" alt="">
+                                                                <p>“we bridge the gap between imagination and
+                                                                    technology. Our mission is to empower
+                                                                    businesses through tailored web and mobile solutions
+                                                                    that captivate, engage, and
+                                                                    deliver results..”</p>
+                                                            </div>
+                                                            <div class="down-content">
+                                                                <img src="assets/images/client-image.jpg" alt="">
+                                                                <div class="right-content">
+                                                                    <h4>May C.</h4>
+                                                                    <span>Founder of Catherina Co.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <div class="thumb">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="client-content">
+                                                                <img src="assets/images/quote.png" alt="">
+                                                                <p>“we bridge the gap between imagination and
+                                                                    technology. Our mission is to empower
+                                                                    businesses through tailored web and mobile solutions
+                                                                    that captivate, engage, and
+                                                                    deliver results..”</p>
+                                                            </div>
+                                                            <div class="down-content">
+                                                                <img src="assets/images/client-image.jpg" alt="">
+                                                                <div class="right-content">
+                                                                    <h4>Random Staff</h4>
+                                                                    <span>Manager, Digital Company</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <div class="thumb">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="client-content">
+                                                                <img src="assets/images/quote.png" alt="">
+                                                                <p>“we bridge the gap between imagination and
+                                                                    technology. Our mission is to empower
+                                                                    businesses through tailored web and mobile solutions
+                                                                    that captivate, engage, and
+                                                                    deliver results.”</p>
+                                                            </div>
+                                                            <div class="down-content">
+                                                                <img src="assets/images/client-image.jpg" alt="">
+                                                                <div class="right-content">
+                                                                    <h4>Mark Am</h4>
+                                                                    <span>CTO, Amber Do Company</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pricing" class="pricing-tables">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading">
+                        <h4>We Have The Best Pre-Order <em>Prices</em> You Can Get</h4>
+                        <img src="assets/images/heading-line-dec.png" alt="" />
+                        <p>
+                            "Experience unbeatable pre-order prices – all under ₹ 40000/-
+                            Get the latest products at wallet-friendly rates, only at [aPc
+                            web works]."
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-item-regular">
+                        <span class="price">₹ 6999/-</span>
+                        <h4>Basic Plan</h4>
+                        <div class="icon">
+                            <img src="assets/images/pricing-table-01.png" alt="" />
+                        </div>
+                        <ul>
+                            <li>Home Page / ✔</li>
+                            <li>Number of Pages / 5</li>
+                            <li class="non-function">Design Quality / Basic</li>
+                            <li class="non-function">Domain / -</li>
+                            <li>Domain Paid / ✔</li>
+                            <li class="non-function">Web space (Free for 1 year) / -</li>
+                        </ul>
+                        <div class="border-button">
+                            <a href="https://api.whatsapp.com/send?phone=7521831221">get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-item-pro">
+                        <span class="price">₹ 19999/-</span>
+                        <h4>Creative Plan</h4>
+                        <div class="icon">
+                            <img src="assets/images/pricing-table-01.png" alt="" />
+                        </div>
+                        <ul>
+                            <li>Home Page / ✔</li>
+                            <li>Number of Pages / 15</li>
+                            <li>Design Quality / Creative</li>
+                            <li>Domain / (.com)</li>
+                            <li>Domain Paid / free</li>
+                            <li class="non-function">Web space (Free for 1 year) / 500MB</li>
+                        </ul>
+                        <div class="border-button">
+                            <a href="https://api.whatsapp.com/send?phone=7521831221">get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-item-regular">
+                        <span class="price">₹ 39999/-</span>
+                        <h4>E-Commerce Plan</h4>
+                        <div class="icon">
+                            <img src="assets/images/pricing-table-01.png" alt="" />a
+                        </div>
+                        <ul>
+                            <li>Home Page / ✔</li>
+                            <li>Number of Pages / 15</li>
+                            <li>Design Quality / Creative</li>
+                            <li>Domain / (.com)</li>
+                            <li>Domain Paid / free</li>
+                            <li>Web space (Free for 1 year) / 500MB</li>
+                        </ul>
+                        <div class="border-button">
+                            <a href="https://api.whatsapp.com/send?phone=7521831221">get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading">
+                        <h4>Contact Us to get in touch </h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <form id="search" method="GET">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input type="text" class="form-control mb-3" id="contactname"
+                                                placeholder="Enter Name" autocomplete="on" required>
+                                            <input type="email" class="form-control mb-3" id="contactemail"
+                                                placeholder="Enter Email" autocomplete="on" required>
+                                            <input type="email" class="form-control mb-3" id="contactmsg"
+                                                placeholder="Enter Message" autocomplete="on" required>
+
+
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <button type="button" onclick="contactHandler()"
+                                                class="btn btn-primary btn-block">Contact Us <i
+                                                    class="fa fa-angle-right"></i></button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-widget">
+                        <h4>Contact Us</h4>
+                        <p>Prem Classic,Suncity Road,Pune</p>
+                        <p><a href="#">7521831221</a></p>
+                        <p><a href="#">apcwebworks@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-widget">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About</a></li>
+
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                        <ul>
+                            <!-- <li><a href="https://www.instagram.com/apcwebworks/?igshid=MzRlODBiNWFlZA%3D%3D"><i
+                                        class="bi bi-instagram"></i></a></li>
+                            <li><a
+                                    href="https://www.facebook.com/people/Apc-Web-Works/pfbid0hQS1DvUKCxrBezGMxUUbLeBFyTyjQUFgkteRf6u6ZbrBAmviuBy4MuVt3ppFCVDol/"><i
+                                        class="bi bi-facebook"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/apc-web-works-a6a94828b/"><i
+                                        class="bi bi-linkedin"></i></a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=7521831221"><i
+                                        class="bi bi-whatsapp"></i></a></li> -->
+                                        <li><a href="#"><i
+                                            class="bi bi-instagram"></i></a></li>
+                                <li><a
+                                        href="#"><i
+                                            class="bi bi-facebook"></i></a></li>
+                                <li><a href="#"><i
+                                            class="bi bi-linkedin"></i></a></li>
+                                <li><a href="https://api.whatsapp.com/send?phone=7521831221"><i
+                                            class="bi bi-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="footer-widget">
+                        <h4>About Our Company</h4>
+                        <div class="logo logobottom">
+                            <img src="assets\images/PC Portrait PNG 1 (1).png" alt="">
+                        </div>
+                        <p> Targeting the tech-savvy, trusted by many, and unwavering in our commitment to client
+                            success..</p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <p>Copyright © 2023 aPC Web Works. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+
+
+</body>
